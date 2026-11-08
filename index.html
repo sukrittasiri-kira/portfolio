@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7d9d8">
+  <title>My Portfolio | About Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #edb9bd;
+      --pink-soft: #f8dddd;
+      --pink-pale: #fff0ed;
+      --yellow: #f5d99b;
+      --yellow-soft: #fff0cf;
+      --cream: #fffaf3;
+      --brown: #875b54;
+      --brown-dark: #68433e;
+      --line: #f3d9d3;
+      --shadow: 0 12px 30px rgba(135, 91, 84, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--brown-dark);
+      background:
+        radial-gradient(ellipse at 8% 12%, rgba(245,217,155,.28), transparent 25%),
+        radial-gradient(ellipse at 95% 32%, rgba(237,185,189,.22), transparent 28%),
+        var(--cream);
+      font-family: "Nunito", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(248, 221, 221, .92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.8);
+    }
+    .nav {
+      max-width: 1180px; margin: auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .brand { font: 800 1.65rem "Baloo 2", cursive; color: var(--brown); white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .nav-links a {
+      padding: 9px 17px; border-radius: 999px; font-weight: 800;
+      transition: .2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { background: var(--yellow); }
+    .hero {
+      max-width: 1180px; margin: auto; padding: 48px 24px 56px;
+      display: grid; grid-template-columns: minmax(260px, .85fr) 1.25fr;
+      align-items: center; gap: 52px; position: relative;
+    }
+    .photo-wrap { position: relative; max-width: 390px; justify-self: center; width: 100%; }
+    .photo-frame {
+      padding: 10px; background: white; border: 3px solid #f7e7dc;
+      border-radius: 42px; transform: rotate(-4deg); box-shadow: var(--shadow);
+    }
+    .photo-frame img { width: 100%; height: 390px; display: block; object-fit: cover; border-radius: 32px; }
+    .ribbon {
+      position: absolute; top: -18px; left: -20px; font-size: 3.3rem;
+      transform: rotate(-15deg); filter: drop-shadow(0 5px 3px #d9a3a0);
+    }
+    .hero-copy { position: relative; }
+    .eyebrow { color: #bd8582; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font: 800 clamp(2.8rem, 6vw, 4.7rem)/.98 "Baloo 2", cursive; color: var(--brown); margin: 10px 0 4px; }
+    .hero-name { font: 800 clamp(1.8rem, 4vw, 2.7rem) "Baloo 2", cursive; margin: 0 0 18px; }
+    .role-pill {
+      display: inline-block; background: var(--pink-soft); border-radius: 999px;
+      padding: 10px 20px; font-weight: 800; margin-bottom: 14px;
+    }
+    .hero-copy p { max-width: 620px; font-size: 1.08rem; }
+    .sparkle { color: #e9bf72; font-size: 2rem; position: absolute; right: 4%; top: 8%; }
+    .cat { font-size: 4.2rem; position: absolute; right: 0; bottom: -20px; opacity: .85; }
+    .content-grid {
+      max-width: 1180px; margin: auto; padding: 0 24px 56px;
+      display: grid; grid-template-columns: 1fr 1.22fr; gap: 18px;
+    }
+    .column { display: grid; gap: 18px; align-content: start; }
+    .card {
+      background: rgba(255,250,243,.88); border: 2px solid var(--line);
+      border-radius: 30px; padding: 24px 27px; box-shadow: var(--shadow);
+      position: relative; overflow: hidden;
+    }
+    .card h2 { font: 800 1.85rem "Baloo 2", cursive; color: var(--brown); margin: 0 0 14px; }
+    .heading-icon { margin-right: 9px; }
+    .facts { display: grid; gap: 9px; }
+    .fact { display: grid; grid-template-columns: 26px 95px 12px 1fr; gap: 8px; align-items: start; }
+    .fact-icon { color: #bd8582; font-size: 1.1rem; }
+    .fact-label { font-weight: 800; }
+    .about-description { border-top: 1px solid var(--line); margin-top: 20px; padding-top: 16px; }
+    .timeline { display: grid; gap: 18px; padding-left: 8px; }
+    .timeline-item { border-left: 3px solid var(--pink); padding: 0 0 0 20px; position: relative; }
+    .timeline-item::before {
+      content: ""; position: absolute; width: 12px; height: 12px; border-radius: 50%;
+      background: var(--pink); left: -8px; top: 5px;
+    }
+    .period { font-weight: 900; color: #a96f6d; }
+    .course { font-weight: 800; }
+    .school { color: #9b7770; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill {
+      background: var(--pink-soft); border: 1px solid #f2d1d0; border-radius: 999px;
+      padding: 8px 16px; font-weight: 800;
+    }
+    .skill:nth-child(3n) { background: var(--yellow-soft); border-color: #f3e2bd; }
+    .hobbies { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; text-align: center; }
+    .hobby { padding: 7px 4px; border-right: 1px solid var(--line); font-weight: 800; font-size: .9rem; }
+    .hobby:last-child { border: 0; }
+    .hobby-icon { display: block; font-size: 1.8rem; margin-bottom: 4px; }
+    .project-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .project {
+      padding: 15px; border-radius: 20px; background: #fff0ed; border: 1px solid var(--line);
+    }
+    .project:nth-child(even) { background: #fff4dc; }
+    .project h3 { margin: 0 0 5px; color: var(--brown); font: 800 1.2rem "Baloo 2", cursive; }
+    .project p { margin: 0 0 10px; font-size: .94rem; }
+    .project a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
+    .contact-lines { display: grid; gap: 9px; }
+    .contact-lines a, .contact-lines span { display: flex; gap: 12px; align-items: center; overflow-wrap: anywhere; }
+    .contact-icon { width: 25px; color: #bd8582; font-size: 1.2rem; }
+    .contact-art { position: absolute; right: 22px; bottom: 10px; font-size: 2.5rem; opacity: .55; }
+    footer { text-align: center; color: #a9857c; padding: 0 20px 30px; font-weight: 800; }
+    @media (max-width: 780px) {
+      .nav { flex-direction: column; }
+      .nav-links { justify-content: center; }
+      .hero { grid-template-columns: 1fr; gap: 30px; text-align: center; padding-top: 35px; }
+      .photo-wrap { max-width: 300px; }
+      .photo-frame img { height: 300px; }
+      .hero-copy p { margin-left: auto; margin-right: auto; }
+      .cat { position: static; display: block; margin-top: 8px; }
+      .content-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .nav { padding: 12px 14px; }
+      .brand { font-size: 1.4rem; }
+      .nav-links { gap: 2px; }
+      .nav-links a { padding: 7px 10px; font-size: .88rem; }
+      .hero, .content-grid { padding-left: 15px; padding-right: 15px; }
+      .card { padding: 20px 18px; border-radius: 24px; }
+      .fact { grid-template-columns: 22px 78px 8px 1fr; gap: 5px; font-size: .92rem; }
+      .hobbies { grid-template-columns: repeat(3, 1fr); }
+      .hobby:nth-child(3) { border-right: 0; }
+      .project-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="#home" id="site-title">My Portfolio ♡</a>
+      <div class="nav-links">
+        <a class="active" href="#about">⌂ About Me</a>
+        <a href="#works">▣ My Works</a>
+        <a href="#contact">✉ Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="photo-wrap">
+        <span class="ribbon">🎀</span>
+        <div class="photo-frame"><img id="profile-image" src="" alt="Profile photo"></div>
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">A little introduction</span>
+        <h1>Hello! ♡</h1>
+        <div class="hero-name" id="hero-name">I'm Your Name</div>
+        <div class="role-pill" id="role"></div>
+        <p id="intro"></p>
+        <span class="sparkle">✦</span>
+        <span class="cat" aria-hidden="true">🐱</span>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <div class="column">
+        <article class="card" id="about">
+          <h2><span class="heading-icon">⭐</span>About Me 🎀</h2>
+          <div class="facts" id="facts"></div>
+          <p class="about-description" id="about-description"></p>
+        </article>
+
+        <article class="card">
+          <h2><span class="heading-icon">♥</span>Hobbies</h2>
+          <div class="hobbies" id="hobbies"></div>
+        </article>
+
+        <article class="card" id="works">
+          <h2><span class="heading-icon">🏆</span>My Works</h2>
+          <p>Take a look at some of my projects!</p>
+          <div class="project-list" id="projects"></div>
+        </article>
+      </div>
+
+      <div class="column">
+        <article class="card">
+          <h2><span class="heading-icon">🎓</span>Education</h2>
+          <div class="timeline" id="education"></div>
+        </article>
+
+        <article class="card">
+          <h2><span class="heading-icon">⚙</span>Skills</h2>
+          <div class="skills" id="skills"></div>
+        </article>
+
+        <article class="card" id="contact">
+          <h2><span class="heading-icon">✉</span>Contact</h2>
+          <p id="contact-message"></p>
+          <div class="contact-lines" id="contact-lines"></div>
+          <span class="contact-art" aria-hidden="true">🌷</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>Made with ♡ and a little bit of sunshine</footer>
+
+  <script>
+    // The page reads its content from data.json so you can edit your details easily.
+    fetch("./data.json")
+      .then(response => {
+        if (!response.ok) throw new Error("Could not load data.json");
+        return response.json();
+      })
+      .then(data => {
+        const put = (id, value) => document.getElementById(id).textContent = value ?? "";
+        put("site-title", `${data.siteTitle || "My Portfolio"} ♡`);
+        put("hero-name", `I'm ${data.name || "Your Name"}`);
+        put("role", data.role);
+        put("intro", data.intro);
+        put("about-description", data.about.description);
+        put("contact-message", data.contact.message);
+        document.getElementById("profile-image").src = data.profileImage;
+
+        const factRows = [
+          ["♟", "Name", data.about.name],
+          ["▣", "Age", data.about.age],
+          ["⌖", "Location", data.about.location],
+          ["◎", "Languages", data.about.languages]
+        ];
+        document.getElementById("facts").innerHTML = factRows.map(row =>
+          `<div class="fact"><span class="fact-icon">${row[0]}</span><span class="fact-label">${row[1]}</span><span>:</span><span>${row[2] || ""}</span></div>`
+        ).join("");
+
+        document.getElementById("education").innerHTML = data.education.map(item =>
+          `<div class="timeline-item"><div class="period">${item.period}</div><div class="course">${item.course}</div><div class="school">${item.school}</div></div>`
+        ).join("");
+
+        document.getElementById("skills").innerHTML = data.skills.map(skill =>
+          `<span class="skill">${skill}</span>`
+        ).join("");
+
+        document.getElementById("hobbies").innerHTML = data.hobbies.map(item =>
+          `<div class="hobby"><span class="hobby-icon">${item.icon}</span>${item.name}</div>`
+        ).join("");
+
+        document.getElementById("projects").innerHTML = data.works.map(item =>
+          `<div class="project"><h3>${item.title}</h3><p>${item.description}</p><a href="${item.link || "#"}" target="_blank" rel="noopener">View project →</a></div>`
+        ).join("");
+
+        const c = data.contact;
+        document.getElementById("contact-lines").innerHTML = `
+          <a href="mailto:${c.email}"><span class="contact-icon">✉</span>${c.email}</a>
+          <span><span class="contact-icon">◉</span>${c.discord}</span>
+          <a href="${c.githubUrl}" target="_blank" rel="noopener"><span class="contact-icon">◉</span>${c.github}</a>
+        `;
+      })
+      .catch(error => {
+        console.error(error);
+        document.body.insertAdjacentHTML("beforeend",
+          '<p style="text-align:center;padding:20px;color:#875b54">Unable to load data.json. Please open this folder using a local server.</p>');
+      });
+  </script>
+</body>
+</html>

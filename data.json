@@ -1,0 +1,77 @@
+{
+  "siteTitle": "My Portfolio",
+  "name": "Your Name",
+  "role": "Computer Science Student  •  Aspiring Data Analyst",
+  "intro": "A curious and easygoing person who loves learning new things, especially in technology, data, and games! Always open to new experiences and challenges.",
+  "profileImage": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900",
+  "about": {
+    "name": "Your Name",
+    "age": "20 years old",
+    "location": "Bangkok, Thailand",
+    "languages": "Thai (Native), English (Good)",
+    "description": "I’m someone who gets excited about learning, especially in the world of tech, and always tries my best in everything I do!"
+  },
+  "education": [
+    {
+      "period": "2022 – Present",
+      "course": "Bachelor of Science in Computer Science",
+      "school": "(Your University)"
+    },
+    {
+      "period": "2019 – 2021",
+      "course": "High School",
+      "school": "(Your School)"
+    }
+  ],
+  "skills": [
+    "Python",
+    "SQL",
+    "Power BI",
+    "Microsoft Excel",
+    "HTML & CSS",
+    "English",
+    "Communication",
+    "Teamwork"
+  ],
+  "hobbies": [
+    {
+      "icon": "🎮",
+      "name": "Gaming"
+    },
+    {
+      "icon": "♫",
+      "name": "Listening to Music"
+    },
+    {
+      "icon": "✈",
+      "name": "Travel"
+    },
+    {
+      "icon": "📷",
+      "name": "Taking Photos"
+    },
+    {
+      "icon": "🐱",
+      "name": "Cute Things"
+    }
+  ],
+  "works": [
+    {
+      "title": "My Project",
+      "description": "Add a short description of one of your projects here.",
+      "link": "#"
+    },
+    {
+      "title": "Another Project",
+      "description": "Tell visitors what you created and what you learned.",
+      "link": "#"
+    }
+  ],
+  "contact": {
+    "message": "Feel free to reach out to me!",
+    "email": "yourname@email.com",
+    "discord": "YourDiscord#1234",
+    "github": "github.com/yourname",
+    "githubUrl": "https://github.com/yourname"
+  }
+}
