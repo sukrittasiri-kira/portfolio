@@ -1,11 +1,11 @@
 {
   "siteTitle": "My Portfolio",
-  "name": "Your Name",
-  "role": "Computer Science Student  •  Aspiring Data Analyst",
+  "name": "Pream",
+  "role": "Information Technology and Innovation",
   "intro": "A curious and easygoing person who loves learning new things, especially in technology, data, and games! Always open to new experiences and challenges.",
   "profileImage": "profile.jpg",
   "about": {
-    "name": "Your Name",
+    "name": "Sukritta Siriporn ",
     "age": "20 years old",
     "location": "Bangkok, Thailand",
     "languages": "Thai (Native), English (Good)",
@@ -13,22 +13,22 @@
   },
   "education": [
     {
-      "period": "2022 – Present",
+      "period": "2025 – Present",
       "course": "Bachelor of Science in Computer Science",
-      "school": "(Your University)"
+      "school": "Bangkok university"
     },
     {
-      "period": "2019 – 2021",
+      "period": "2019 – 2024",
       "course": "High School",
-      "school": "(Your School)"
+      "school": "Benjamarachalai School under the Royal Patronage of His Majesty the King"
     }
   ],
   "skills": [
-    "Python",
+    "Figma",
     "SQL",
     "Power BI",
-    "Microsoft Excel",
-    "HTML & CSS",
+    "Adaptability",
+    "Bubble",
     "English",
     "Communication",
     "Teamwork"
@@ -43,8 +43,8 @@
       "name": "Listening to Music"
     },
     {
-      "icon": "✈",
-      "name": "Travel"
+      "icon": "🧑‍🍳",
+      "name": "Cooking"
     },
     {
       "icon": "📷",
@@ -69,9 +69,9 @@
   ],
   "contact": {
     "message": "Feel free to reach out to me!",
-    "email": "yourname@email.com",
-    "discord": "YourDiscord#1234",
-    "github": "github.com/yourname",
-    "githubUrl": "https://github.com/yourname"
+    "email": "sukritta.siri@bumail.net",
+    "instagram": "IG : xxxxx_xx",
+    "lineID": "IDLinexxxxx_xx",
+    "githubUrl": "https://github.com/sukrittasiriporn"
   }
 }
